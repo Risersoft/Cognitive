@@ -1,0 +1,10 @@
+﻿OAuth 2.0 Client ID
+22BDV5
+Client Secret
+d27cd82e2571b42692b7677915d6f745
+Callback URL
+https://token.botframework.com/.auth/web/redirect
+OAuth 2.0: Authorization URI
+https://www.fitbit.com/oauth2/authorize
+OAuth 2.0: Access/Refresh Token Request URI
+https://api.fitbit.com/oauth2/token

@@ -1,0 +1,361 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="mxentdbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="PersEdu">
+          <Key>
+            <PropertyRef Name="PersEduID" />
+          </Key>
+          <Property Name="PersEduID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PersonID" Type="int" />
+          <Property Name="Qualification" Type="varchar" MaxLength="1000" />
+          <Property Name="Institution" Type="varchar" MaxLength="1000" />
+          <Property Name="YearQual" Type="varchar" MaxLength="1000" />
+          <Property Name="Marks" Type="decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="PersFamily">
+          <Key>
+            <PropertyRef Name="PersFamilyID" />
+          </Key>
+          <Property Name="PersFamilyID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PersonID" Type="int" />
+          <Property Name="MemberName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Relation" Type="nvarchar" MaxLength="50" />
+          <Property Name="BDate" Type="datetime" />
+          <Property Name="Profession" Type="varchar" MaxLength="50" />
+          <Property Name="Other" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Persons">
+          <Key>
+            <PropertyRef Name="PersonID" />
+          </Key>
+          <Property Name="PersonID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Salutation" Type="varchar" MaxLength="50" />
+          <Property Name="FirstName" Type="varchar" MaxLength="255" />
+          <Property Name="MidName" Type="varchar" MaxLength="255" />
+          <Property Name="LastName" Type="varchar" MaxLength="255" />
+          <Property Name="FullName" Type="varchar" MaxLength="818" StoreGeneratedPattern="Computed" Nullable="false" />
+          <Property Name="NickName" Type="varchar" MaxLength="100" />
+          <Property Name="Sex" Type="varchar" MaxLength="6" StoreGeneratedPattern="Computed" Nullable="false" />
+          <Property Name="MarStatus" Type="varchar" MaxLength="50" />
+          <Property Name="IsFemale" Type="bit" />
+          <Property Name="Email" Type="varchar" MaxLength="255" />
+          <Property Name="CellNum" Type="varchar" MaxLength="255" />
+          <Property Name="Remark" Type="varchar" MaxLength="500" />
+          <Property Name="Education" Type="varchar" MaxLength="100" />
+          <Property Name="Profile" Type="varchar" MaxLength="100" />
+          <Property Name="Birthday" Type="smalldatetime" />
+          <Property Name="Anniversary" Type="smalldatetime" />
+          <Property Name="PrAddress" Type="varchar" MaxLength="100" />
+          <Property Name="PrCity" Type="varchar" MaxLength="50" />
+          <Property Name="PrState" Type="varchar" MaxLength="50" />
+          <Property Name="PrCountry" Type="varchar" MaxLength="50" />
+          <Property Name="PrPinCode" Type="varchar" MaxLength="50" />
+          <Property Name="OfficeCountry" Type="varchar" MaxLength="50" />
+          <Property Name="OfficeArea" Type="varchar" MaxLength="50" />
+          <Property Name="OfficePhone" Type="varchar" MaxLength="50" />
+          <Property Name="PrPhCountry" Type="varchar" MaxLength="50" />
+          <Property Name="PrPhArea" Type="varchar" MaxLength="50" />
+          <Property Name="PrPhone" Type="varchar" MaxLength="255" />
+          <Property Name="Web" Type="varchar" MaxLength="50" />
+          <Property Name="LastUpdated" Type="datetime" />
+          <Property Name="PmAddress" Type="varchar" MaxLength="100" />
+          <Property Name="PmCity" Type="varchar" MaxLength="50" />
+          <Property Name="PmState" Type="varchar" MaxLength="50" />
+          <Property Name="PmCountry" Type="varchar" MaxLength="50" />
+          <Property Name="PmPinCode" Type="varchar" MaxLength="50" />
+          <Property Name="PmPhCountry" Type="varchar" MaxLength="50" />
+          <Property Name="PmPhArea" Type="varchar" MaxLength="50" />
+          <Property Name="PmPhone" Type="varchar" MaxLength="255" />
+          <Property Name="PicPerson" Type="image" />
+          <Property Name="FingerPrint" Type="binary" MaxLength="50" />
+          <Property Name="TempEmpID" Type="int" />
+          <Property Name="TopQual" Type="varchar" MaxLength="1000" />
+          <Property Name="OtherExp" Type="decimal" Precision="18" Scale="4" />
+          <Property Name="PrStateCode" Type="varchar" MaxLength="50" />
+          <Property Name="PrCountryCode" Type="varchar" MaxLength="50" />
+          <Property Name="PmStateCode" Type="varchar" MaxLength="50" />
+          <Property Name="PmCountryCode" Type="varchar" MaxLength="50" />
+          <Property Name="PrMailingAddress" Type="varchar" MaxLength="1000" />
+          <Property Name="PmMailingAddress" Type="varchar" MaxLength="1000" />
+        </EntityType>
+        <Association Name="FK_PersEdu_Persons">
+          <End Role="Persons" Type="Self.Persons" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PersEdu" Type="Self.PersEdu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Persons">
+              <PropertyRef Name="PersonID" />
+            </Principal>
+            <Dependent Role="PersEdu">
+              <PropertyRef Name="PersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersFamily_Persons">
+          <End Role="Persons" Type="Self.Persons" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PersFamily" Type="Self.PersFamily" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Persons">
+              <PropertyRef Name="PersonID" />
+            </Principal>
+            <Dependent Role="PersFamily">
+              <PropertyRef Name="PersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="mxentdbModelStoreContainer">
+          <EntitySet Name="PersEdu" EntityType="Self.PersEdu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PersFamily" EntityType="Self.PersFamily" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Persons" EntityType="Self.Persons" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_PersEdu_Persons" Association="Self.FK_PersEdu_Persons">
+            <End Role="Persons" EntitySet="Persons" />
+            <End Role="PersEdu" EntitySet="PersEdu" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersFamily_Persons" Association="Self.FK_PersFamily_Persons">
+            <End Role="Persons" EntitySet="Persons" />
+            <End Role="PersFamily" EntitySet="PersFamily" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="mxentdbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="PersEdu">
+          <Key>
+            <PropertyRef Name="PersEduID" />
+          </Key>
+          <Property Name="PersEduID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PersonID" Type="Int32" />
+          <Property Name="Qualification" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="Institution" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="YearQual" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="Marks" Type="Decimal" Precision="18" Scale="2" />
+          <NavigationProperty Name="Person" Relationship="Self.FK_PersEdu_Persons" FromRole="PersEdu" ToRole="Persons" />
+        </EntityType>
+        <EntityType Name="PersFamily">
+          <Key>
+            <PropertyRef Name="PersFamilyID" />
+          </Key>
+          <Property Name="PersFamilyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PersonID" Type="Int32" />
+          <Property Name="MemberName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Relation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BDate" Type="DateTime" Precision="3" />
+          <Property Name="Profession" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Other" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Person" Relationship="Self.FK_PersFamily_Persons" FromRole="PersFamily" ToRole="Persons" />
+        </EntityType>
+        <EntityType Name="Person">
+          <Key>
+            <PropertyRef Name="PersonID" />
+          </Key>
+          <Property Name="PersonID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Salutation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FirstName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="MidName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="FullName" Type="String" MaxLength="818" FixedLength="false" Unicode="false" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="NickName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Sex" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="MarStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IsFemale" Type="Boolean" />
+          <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="CellNum" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Remark" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Education" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Profile" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Birthday" Type="DateTime" Precision="0" />
+          <Property Name="Anniversary" Type="DateTime" Precision="0" />
+          <Property Name="PrAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PrCity" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PrState" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PrCountry" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PrPinCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OfficeCountry" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OfficeArea" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OfficePhone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PrPhCountry" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PrPhArea" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PrPhone" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Web" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LastUpdated" Type="DateTime" Precision="3" />
+          <Property Name="PmAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PmCity" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PmState" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PmCountry" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PmPinCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PmPhCountry" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PmPhArea" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PmPhone" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="PicPerson" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="FingerPrint" Type="Binary" MaxLength="50" FixedLength="true" />
+          <Property Name="TempEmpID" Type="Int32" />
+          <Property Name="TopQual" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="OtherExp" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="PrStateCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PrCountryCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PmStateCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PmCountryCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PrMailingAddress" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="PmMailingAddress" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="PersEdus" Relationship="Self.FK_PersEdu_Persons" FromRole="Persons" ToRole="PersEdu" />
+          <NavigationProperty Name="PersFamilies" Relationship="Self.FK_PersFamily_Persons" FromRole="Persons" ToRole="PersFamily" />
+        </EntityType>
+        <Association Name="FK_PersEdu_Persons">
+          <End Role="Persons" Type="Self.Person" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PersEdu" Type="Self.PersEdu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Persons">
+              <PropertyRef Name="PersonID" />
+            </Principal>
+            <Dependent Role="PersEdu">
+              <PropertyRef Name="PersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersFamily_Persons">
+          <End Role="Persons" Type="Self.Person" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PersFamily" Type="Self.PersFamily" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Persons">
+              <PropertyRef Name="PersonID" />
+            </Principal>
+            <Dependent Role="PersFamily">
+              <PropertyRef Name="PersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="mxentdbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="PersEdus" EntityType="Self.PersEdu" />
+          <EntitySet Name="PersFamilies" EntityType="Self.PersFamily" />
+          <EntitySet Name="Persons" EntityType="Self.Person" />
+          <AssociationSet Name="FK_PersEdu_Persons" Association="Self.FK_PersEdu_Persons">
+            <End Role="Persons" EntitySet="Persons" />
+            <End Role="PersEdu" EntitySet="PersEdus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersFamily_Persons" Association="Self.FK_PersFamily_Persons">
+            <End Role="Persons" EntitySet="Persons" />
+            <End Role="PersFamily" EntitySet="PersFamilies" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="mxentdbModelStoreContainer" CdmEntityContainer="mxentdbEntities">
+          <EntitySetMapping Name="PersEdus">
+            <EntityTypeMapping TypeName="mxentdbModel.PersEdu">
+              <MappingFragment StoreEntitySet="PersEdu">
+                <ScalarProperty Name="PersEduID" ColumnName="PersEduID" />
+                <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+                <ScalarProperty Name="Qualification" ColumnName="Qualification" />
+                <ScalarProperty Name="Institution" ColumnName="Institution" />
+                <ScalarProperty Name="YearQual" ColumnName="YearQual" />
+                <ScalarProperty Name="Marks" ColumnName="Marks" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PersFamilies">
+            <EntityTypeMapping TypeName="mxentdbModel.PersFamily">
+              <MappingFragment StoreEntitySet="PersFamily">
+                <ScalarProperty Name="PersFamilyID" ColumnName="PersFamilyID" />
+                <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+                <ScalarProperty Name="MemberName" ColumnName="MemberName" />
+                <ScalarProperty Name="Relation" ColumnName="Relation" />
+                <ScalarProperty Name="BDate" ColumnName="BDate" />
+                <ScalarProperty Name="Profession" ColumnName="Profession" />
+                <ScalarProperty Name="Other" ColumnName="Other" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Persons">
+            <EntityTypeMapping TypeName="mxentdbModel.Person">
+              <MappingFragment StoreEntitySet="Persons">
+                <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+                <ScalarProperty Name="Salutation" ColumnName="Salutation" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="MidName" ColumnName="MidName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="NickName" ColumnName="NickName" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="MarStatus" ColumnName="MarStatus" />
+                <ScalarProperty Name="IsFemale" ColumnName="IsFemale" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="CellNum" ColumnName="CellNum" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="Education" ColumnName="Education" />
+                <ScalarProperty Name="Profile" ColumnName="Profile" />
+                <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+                <ScalarProperty Name="Anniversary" ColumnName="Anniversary" />
+                <ScalarProperty Name="PrAddress" ColumnName="PrAddress" />
+                <ScalarProperty Name="PrCity" ColumnName="PrCity" />
+                <ScalarProperty Name="PrState" ColumnName="PrState" />
+                <ScalarProperty Name="PrCountry" ColumnName="PrCountry" />
+                <ScalarProperty Name="PrPinCode" ColumnName="PrPinCode" />
+                <ScalarProperty Name="OfficeCountry" ColumnName="OfficeCountry" />
+                <ScalarProperty Name="OfficeArea" ColumnName="OfficeArea" />
+                <ScalarProperty Name="OfficePhone" ColumnName="OfficePhone" />
+                <ScalarProperty Name="PrPhCountry" ColumnName="PrPhCountry" />
+                <ScalarProperty Name="PrPhArea" ColumnName="PrPhArea" />
+                <ScalarProperty Name="PrPhone" ColumnName="PrPhone" />
+                <ScalarProperty Name="Web" ColumnName="Web" />
+                <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
+                <ScalarProperty Name="PmAddress" ColumnName="PmAddress" />
+                <ScalarProperty Name="PmCity" ColumnName="PmCity" />
+                <ScalarProperty Name="PmState" ColumnName="PmState" />
+                <ScalarProperty Name="PmCountry" ColumnName="PmCountry" />
+                <ScalarProperty Name="PmPinCode" ColumnName="PmPinCode" />
+                <ScalarProperty Name="PmPhCountry" ColumnName="PmPhCountry" />
+                <ScalarProperty Name="PmPhArea" ColumnName="PmPhArea" />
+                <ScalarProperty Name="PmPhone" ColumnName="PmPhone" />
+                <ScalarProperty Name="PicPerson" ColumnName="PicPerson" />
+                <ScalarProperty Name="FingerPrint" ColumnName="FingerPrint" />
+                <ScalarProperty Name="TempEmpID" ColumnName="TempEmpID" />
+                <ScalarProperty Name="TopQual" ColumnName="TopQual" />
+                <ScalarProperty Name="OtherExp" ColumnName="OtherExp" />
+                <ScalarProperty Name="PrStateCode" ColumnName="PrStateCode" />
+                <ScalarProperty Name="PrCountryCode" ColumnName="PrCountryCode" />
+                <ScalarProperty Name="PmStateCode" ColumnName="PmStateCode" />
+                <ScalarProperty Name="PmCountryCode" ColumnName="PmCountryCode" />
+                <ScalarProperty Name="PrMailingAddress" ColumnName="PrMailingAddress" />
+                <ScalarProperty Name="PmMailingAddress" ColumnName="PmMailingAddress" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

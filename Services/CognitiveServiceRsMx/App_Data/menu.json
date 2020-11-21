@@ -1,0 +1,165 @@
+﻿{
+  "initialDate": "2017-05-08T00:00:00+00:00",
+  "menu": [
+    {
+      "week": 1,
+      "day": "Tuesday",
+      "primo": "Focaccia",
+      "secondo": "Cooked ham",
+      "contorno": "Salad and carrots",
+      "dolce": "Fresh fruit"
+    },
+    {
+      "week": 1,
+      "day": "Wednesday",
+      "primo": "Tortelloni with ricotta and spinach",
+      "secondo": "Grilled chicken breast",
+      "contorno": "Tomatoes and peas",
+      "dolce": "Fruit salad"
+    },
+    {
+      "week": 1,
+      "day": "Thursday",
+      "primo": "Rice salad",
+      "secondo": "Mozzarella",
+      "contorno": "Tomatoes and cappuccio",
+      "dolce": "Yoghurt"
+    },
+    {
+      "week": 1,
+      "day": "Friday",
+      "primo": "Spaghetti with tuna and tomato",
+      "secondo": "Fish fingers",
+      "contorno": "Tomatoes and cappuccio",
+      "dolce": "Apricot tart"
+    },
+    {
+      "week": 2,
+      "day": "Monday",
+      "primo": "Gnocchetti sardi with tomatoes",
+      "secondo": "Vitello tonnato",
+      "contorno": "Steamed potatoes and carrots",
+      "dolce": "Fresh fruit"
+    },
+    {
+      "week": 2,
+      "day": "Tuesday",
+      "primo": "Lasagne with ragù",
+      "secondo": "Grana cheese",
+      "contorno": "Tomato salad",
+      "dolce": "Banana"
+    },
+    {
+      "week": 2,
+      "day": "Wednesday",
+      "primo": "Rice with shrimp",
+      "secondo": "Roast turkey",
+      "contorno": "Salid and carrots",
+      "dolce": "Budino"
+    },
+    {
+      "week": 2,
+      "day": "Thursday",
+      "primo": "Gnocchi with ragù ",
+      "secondo": "Piatto unico",
+      "contorno": "Tomatoes and cappuccio",
+      "dolce": "Yoghurt"
+    },
+    {
+      "week": 2,
+      "day": "Friday",
+      "primo": "Caserecce with pesto ",
+      "secondo": "Tuna",
+      "contorno": "Canellini bean salad",
+      "dolce": "Apple"
+    },
+    {
+      "week": 3,
+      "day": "Monday",
+      "primo": "Pasta salad",
+      "secondo": "Egg",
+      "contorno": "Steamed potatoes and carrots",
+      "dolce": "Apple"
+    },
+    {
+      "week": 3,
+      "day": "Tuesday",
+      "primo": "Pizza margherita",
+      "secondo": "Turkey ham",
+      "contorno": "Courgette and salad",
+      "dolce": "Banana"
+    },
+    {
+      "week": 3,
+      "day": "Wednesday",
+      "primo": "Spaghetti with tomato",
+      "secondo": "Baked chicken",
+      "contorno": "Salad and cherry tomato gratin",
+      "dolce": "Fruit salad"
+    },
+    {
+      "week": 3,
+      "day": "Thursday",
+      "primo": "Tortelloni with ricotta and spinach",
+      "secondo": "Hamburger",
+      "contorno": "Tomatoes and beans",
+      "dolce": "Torta margherita "
+    },
+    {
+      "week": 3,
+      "day": "Friday",
+      "primo": "Rice and tomato",
+      "secondo": "Fish cutlet",
+      "contorno": "Salad and tomato",
+      "dolce": "Yoghurt"
+    },
+    {
+      "week": 4,
+      "day": "Monday",
+      "primo": "Gnocchetti sardi al pomodoro",
+      "secondo": "Asiago cheese",
+      "contorno": "Salad and carrots",
+      "dolce": "Apple"
+    },
+    {
+      "week": 4,
+      "day": "Tuesday",
+      "primo": "Fusilli with pesto",
+      "secondo": "Vitello tonnato ",
+      "contorno": "Salad and steamed potatoes",
+      "dolce": "Fresh fruit"
+    },
+    {
+      "week": 4,
+      "day": "Wednesday",
+      "primo": "Gnocchi with pomodoro",
+      "secondo": "Grilled turkey",
+      "contorno": "Tomatoes and cappuccio",
+      "dolce": "Fresh fruit"
+    },
+    {
+      "week": 4,
+      "day": "Thursday",
+      "primo": "Caserecce with tomato and basil",
+      "secondo": "Straccetti of beef",
+      "contorno": "Salad and baked potatoes",
+      "dolce": "Budino"
+    },
+    {
+      "week": 4,
+      "day": "Friday",
+      "primo": "Rice with shrimp",
+      "secondo": "Salmon",
+      "contorno": "Tomatoes and carrots",
+      "dolce": "Banana"
+    },
+    {
+      "week": 1,
+      "day": "Monday",
+      "primo": "Tagliatelle with ragù",
+      "secondo": "Frittata",
+      "contorno": "Salad and peporonata",
+      "dolce": "Apple"
+    }
+  ]
+}

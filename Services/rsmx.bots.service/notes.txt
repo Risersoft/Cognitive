@@ -1,0 +1,16 @@
+﻿https://www.c-sharpcorner.com/blogs/build-an-enterprise-chat-bot-for-service-now-integrations-and-qna-based-faqs
+https://github.com/microsoft/botframework-solutions/tree/master/templates/Enterprise-Template
+https://adamstephensen.com/2019/03/20/enterprise-bot-template/
+http://aihelpwebsite.com/Blog/EntryId/2037/Creating-A-Bot-Using-ChoiceFlow-for-Bot-Builder-v4-NET-SDK
+https://github.com/botbuildercommunity/botbuilder-community-dotnet
+
+
+TODO:
+
+1- Update rsmx.congnitive to v4 
+2- Implement EchoBot as per v4
+3- Implement Wordy as per Custom-Dialog and CoreBot (LUIS)
+4- Implement Kaka (Telegram) with ServiceAuthProvider and IProviderContext
+
+Kaka is for ProjectsNirvana. We will have Bot and BotChannel tables for capturing details about each bot.
+

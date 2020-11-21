@@ -1,0 +1,60 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30406.217
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_CognitiveService", "Services\CognitiveServiceRsMx\_CognitiveService.csproj", "{41ACF83E-E782-4481-8CEC-FBEBA05E03D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "risersoft.shared.web.mvc", "..\Common\Web\risersoft.shared.web.mvc\risersoft.shared.web.mvc.csproj", "{E0CC17DC-880D-47B0-B8F5-1C981F76C662}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "risersoft.app.mxform.cog", "Framework\risersoft.app.mxform.bot\risersoft.app.mxform.cog.csproj", "{CCB59276-02F8-4719-B12D-471CA47AE589}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_BotService", "Services\rsmx.bots.service\_BotService.csproj", "{4448A17F-630A-49B3-A9B9-49FA03083176}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{41ACF83E-E782-4481-8CEC-FBEBA05E03D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41ACF83E-E782-4481-8CEC-FBEBA05E03D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41ACF83E-E782-4481-8CEC-FBEBA05E03D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41ACF83E-E782-4481-8CEC-FBEBA05E03D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0CC17DC-880D-47B0-B8F5-1C981F76C662}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0CC17DC-880D-47B0-B8F5-1C981F76C662}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0CC17DC-880D-47B0-B8F5-1C981F76C662}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0CC17DC-880D-47B0-B8F5-1C981F76C662}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCB59276-02F8-4719-B12D-471CA47AE589}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCB59276-02F8-4719-B12D-471CA47AE589}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCB59276-02F8-4719-B12D-471CA47AE589}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCB59276-02F8-4719-B12D-471CA47AE589}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4448A17F-630A-49B3-A9B9-49FA03083176}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4448A17F-630A-49B3-A9B9-49FA03083176}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4448A17F-630A-49B3-A9B9-49FA03083176}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4448A17F-630A-49B3-A9B9-49FA03083176}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BE5BF79A-63ED-4BE1-8790-5A81BBC3656B}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://rsds.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Services\\CognitiveServiceRsMx\\_CognitiveService.csproj
+		SccProjectName1 = Services/CognitiveServiceRsMx
+		SccLocalPath1 = Services\\CognitiveServiceRsMx
+		SccProjectUniqueName2 = Framework\\risersoft.app.mxform.bot\\risersoft.app.mxform.cog.csproj
+		SccProjectName2 = Framework/risersoft.app.mxform.bot
+		SccLocalPath2 = Framework\\risersoft.app.mxform.bot
+		SccProjectUniqueName3 = ..\\Common\\Web\\risersoft.shared.web.mvc\\risersoft.shared.web.mvc.csproj
+		SccProjectName3 = ../Common/Web/risersoft.shared.web.mvc
+		SccLocalPath3 = ..\\Common\\Web\\risersoft.shared.web.mvc
+		SccProjectUniqueName4 = Services\\rsmx.bots.service\\_BotService.csproj
+		SccProjectName4 = Services/rsmx.bots.service
+		SccLocalPath4 = Services\\rsmx.bots.service
+	EndGlobalSection
+EndGlobal

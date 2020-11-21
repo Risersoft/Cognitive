@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CCB59276-02F8-4719-B12D-471CA47AE589}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>risersoft.app.mxform.cog</RootNamespace>
+    <AssemblyName>risersoft.app.mxform.cog</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug2|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug2\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Alexa\Menu\Menu.cs" />
+    <Compile Include="Alexa\Menu\MenuSchedule.cs" />
+    <Compile Include="Alexa\Menu\MenuSpeechLet.cs" />
+    <Compile Include="Alexa\Quiz\IN\INQuizSpeechLet.cs" />
+    <Compile Include="Alexa\Quiz\IN\ItemIN.cs" />
+    <Compile Include="Alexa\Quiz\US\ItemUS.cs" />
+    <Compile Include="Alexa\Quiz\US\USQuizSpeechLet.cs" />
+    <Compile Include="Alexa\Util\DateTimeExtensions.cs" />
+    <Compile Include="Alexa\Util\DateTimeProvider.cs" />
+    <Compile Include="Alexa\Util\IDateTimeProvider.cs" />
+    <Compile Include="Alexa\Wordy\DictionaryResult.cs" />
+    <Compile Include="Alexa\Wordy\OxfordApiClient.cs" />
+    <Compile Include="Alexa\Wordy\WordListEntry.cs" />
+    <Compile Include="Alexa\Wordy\WordPlayEntry.cs" />
+    <Compile Include="Alexa\Wordy\WordySpeechlet.cs" />
+    <Compile Include="BotFx\Bots\LiftBot.cs" />
+    <Compile Include="BotFx\Bots\AuthBot.cs" />
+    <Compile Include="BotFx\Dialogs\BasicLuisDialog.cs" />
+    <Compile Include="BotFx\Bots\EchoBot.cs" />
+    <Compile Include="BotFx\Fitbit\FitbitDialog.cs" />
+    <Compile Include="BotFx\Fitbit\Helper\Constants.cs" />
+    <Compile Include="BotFx\Fitbit\Helper\DialogHelpers.cs" />
+    <Compile Include="BotFx\Fitbit\Helper\FitBitApiHelper.cs" />
+    <Compile Include="BotFx\Fitbit\Models\UserActivity.cs" />
+    <Compile Include="BotFx\Fitbit\Models\UserBadges.cs" />
+    <Compile Include="BotFx\Fitbit\Models\UserProfile.cs" />
+    <Compile Include="BotFx\Models\CustomState.cs" />
+    <Compile Include="BotFx\Models\Sandwich.cs" />
+    <Compile Include="Models\BotGroupOption.cs" />
+    <Compile Include="Models\BotGroupUser.cs" />
+    <Compile Include="Models\BotUserOption.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Alexa\Menu\MenuUtterances.txt" />
+    <Content Include="BotFx\Fitbit\notes.txt" />
+    <EmbeddedResource Include="BotFx\Fitbit\Resources\Images\BotPic.png" />
+    <EmbeddedResource Include="BotFx\Fitbit\Resources\Images\BrokenBot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Alexa\Menu\MenuIntentSchema.json" />
+    <None Include="Alexa\Quiz\IN\QuizIntentSchemaIN.json" />
+    <None Include="Alexa\Quiz\US\QuizIntentSchema.json" />
+    <Content Include="Alexa\Wordy\wordlist.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="BotFx\Fitbit\Resources\AdaptiveCards\UserBadges\Badge.json" />
+    <EmbeddedResource Include="BotFx\Fitbit\Resources\AdaptiveCards\UserBadges\UserBadgesAdapativeCard.json" />
+    <EmbeddedResource Include="BotFx\Fitbit\Resources\AdaptiveCards\UserProfileAdaptiveCard.json" />
+    <EmbeddedResource Include="BotFx\Fitbit\Resources\AdaptiveCards\UserProfile\UserProfileAdaptiveCard.json" />
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Alexa.NET">
+      <Version>1.14.0</Version>
+    </PackageReference>
+    <PackageReference Include="AutoMapper">
+      <Version>9.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="Bot.Builder.Community.Dialogs.Luis">
+      <Version>4.6.5</Version>
+    </PackageReference>
+    <PackageReference Include="CommonServiceLocator">
+      <Version>2.0.5</Version>
+    </PackageReference>
+    <PackageReference Include="EntityFramework">
+      <Version>6.4.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Logging">
+      <Version>3.1.2</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions">
+      <Version>3.1.2</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Graph">
+      <Version>3.8.0</Version>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>12.0.3</Version>
+    </PackageReference>
+    <PackageReference Include="System.Configuration.ConfigurationManager">
+      <Version>4.7.0</Version>
+    </PackageReference>
+    <PackageReference Include="System.Reflection.Emit">
+      <Version>4.7.0</Version>
+    </PackageReference>
+    <PackageReference Include="System.Runtime.CompilerServices.Unsafe">
+      <Version>4.7.0</Version>
+    </PackageReference>
+    <PackageReference Include="System.Security.Principal.Windows">
+      <Version>4.7.0</Version>
+    </PackageReference>
+    <PackageReference Include="System.ValueTuple">
+      <Version>4.5.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Bot.Builder.Dialogs">
+      <Version>4.9.4</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Bot.Builder.Integration.AspNet.WebApi">
+      <Version>4.7.2</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Configuration">
+      <Version>3.1.2</Version>
+    </PackageReference>
+    <PackageReference Include="Serilog">
+      <Version>2.9.0</Version>
+    </PackageReference>
+    <PackageReference Include="System.Drawing.Common">
+      <Version>4.7.0</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="'$(Configuration)' == 'Debug2'">
+      <ItemGroup>
+        <ProjectReference Include="..\..\..\Framework\Shared\risersoft.app.mxent\risersoft.app.mxent.vbproj">
+          <Project>{2693738b-de66-476d-afda-fd39e4579f27}</Project>
+          <Name>risersoft.app.mxent</Name>
+        </ProjectReference>
+        <ProjectReference Include="..\..\..\Framework\Shared\risersoft.shared.cloud\risersoft.shared.cloud.vbproj">
+          <Project>{f5b5afa9-af4a-4b86-8d8d-502976813633}</Project>
+          <Name>risersoft.shared.cloud</Name>
+        </ProjectReference>
+        <ProjectReference Include="..\..\..\Framework\Shared\risersoft.shared.dal\risersoft.shared.dal.vbproj">
+          <Project>{68b77483-9004-404b-b649-0e8bb780158e}</Project>
+          <Name>risersoft.shared.dal</Name>
+        </ProjectReference>
+        <ProjectReference Include="..\..\..\Framework\Shared\risersoft.shared\risersoft.shared.vbproj">
+          <Project>{678f7367-71bb-425c-a388-b45d25822ca3}</Project>
+          <Name>risersoft.shared</Name>
+        </ProjectReference>
+        <ProjectReference Include="..\..\..\Framework\Shared\risersoft.shared.dotnetfx\risersoft.shared.dotnetfx.vbproj">
+          <Project>{3dc06d9d-b9b9-414c-b83c-2b9eeaaf5ea6}</Project>
+          <Name>risersoft.shared.dotnetfx</Name>
+        </ProjectReference>
+        <ProjectReference Include="..\..\..\Framework\Web\risersoft.shared.web\risersoft.shared.web.vbproj">
+          <Project>{cdfe0943-b942-4857-a99d-98230791fd8d}</Project>
+          <Name>risersoft.shared.web</Name>
+        </ProjectReference>
+        <ProjectReference Include="..\..\..\Framework\Shared\risersoft.shared.portable\risersoft.shared.portable.csproj">
+          <Project>{1742c540-4c7d-4397-8a46-f6a6ade33c5e}</Project>
+          <Name>risersoft.shared.portable</Name>
+        </ProjectReference>
+        <ProjectReference Include="..\..\..\Framework\Web\risersoft.shared.bot\risersoft.shared.bot.vbproj">
+          <Project>{74342eba-7988-4c32-a826-ad62540b74ac}</Project>
+          <Name>risersoft.shared.bot</Name>
+        </ProjectReference>
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <Reference Include="risersoft.app.mxent">
+          <HintPath>..\..\..\common\depends\risersoft.app.mxent.dll</HintPath>
+        </Reference>
+        <Reference Include="risersoft.shared">
+          <HintPath>..\..\..\common\depends\risersoft.shared.dll</HintPath>
+        </Reference>
+        <Reference Include="risersoft.shared">
+          <HintPath>..\..\..\common\depends\risersoft.shared.dotnetfx.dll</HintPath>
+        </Reference>
+        <Reference Include="risersoft.shared.dal">
+          <HintPath>..\..\..\common\depends\risersoft.shared.dal.dll</HintPath>
+        </Reference>
+        <Reference Include="risersoft.shared.portable">
+          <HintPath>..\..\..\common\depends\risersoft.shared.portable.dll</HintPath>
+        </Reference>
+        <Reference Include="risersoft.shared.web">
+          <HintPath>..\..\..\common\depends\risersoft.shared.web.dll</HintPath>
+        </Reference>
+        <Reference Include="risersoft.shared.cloud">
+          <HintPath>..\..\..\common\depends\risersoft.shared.cloud.dll</HintPath>
+        </Reference>
+        <Reference Include="risersoft.shared.bot">
+          <HintPath>..\..\..\common\depends\risersoft.shared.bot.dll</HintPath>
+        </Reference>
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
